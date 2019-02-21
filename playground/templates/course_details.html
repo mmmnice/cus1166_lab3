@@ -1,0 +1,18 @@
+<html>
+<h1> Enroll Page </h1>
+<body>
+  <li> Course ID: <b>{{course.id}}</b> Course Number: <b>{{course.course_number}}</b> Course Title: <b>{{course.course_title}}</b> </li>
+
+
+  <form action="{{url_for('register_student', course_id=course_id)}}" method="POST">
+    <p>Name <input type="text" name = "name"/></p>
+    <p>Grade <input type="text" name ="grade" /> </p>
+    <p><input type="submit" value = "submit"/></p>
+  </form>
+
+  {% for i in students %}
+  <li><b>Name:</b> {{i.name}} <b>Grade:</b> {{i.grade}}  </li>
+  {% endfor %}
+<a href = "{{url_for('index')}}"> HOME </a>
+</body>
+</html>

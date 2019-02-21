@@ -11,7 +11,7 @@
 
   <h2> Courses </h2>
   {% for i in courses %}
-  <li><b>ID: </b>{{i.id}} <b>Course Number:</b> {{i.course_number}} <b>Course Title:</b> {{i.course_title}} </li>
+  <li><b>ID: </b>{{i.id}} <b>Course Number:</b> {{i.course_number}} <b>Course Title:</b> {{i.course_title}} <a href= {{url_for('register_student', course_id=i.id) }}> GO HERE </a> </li>
   {% endfor %}
 </body>
 </html>

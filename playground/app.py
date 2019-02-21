@@ -23,6 +23,20 @@ def add_Course():
     courses=Course.query.all()
     return render_template("index.html",courses=courses)
 
+@app.route("/register_student/<int:course_id>", methods=["GET", "POST"])
+def register_student(course_id):
+    course=Course.query.get(course_id)
+    if request.method =="POST":
+        name=request.form.get("name")
+        grade=request.form.get("grade")
+        course.addStudent(name, grade)
+
+    students=course.students
+    return render_template("course_details.html",students=students,course=course,course_id=course_id)
+
+
+
+
 def main():
     if (len(sys.argv)==2):
         print(sys.argv)
