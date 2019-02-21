@@ -1,5 +1,6 @@
 <html>
-
+{% extends 'layout.html' %}
+{% block body %}
 <h1> Add a Course </h1>
 
 <body>
@@ -14,4 +15,5 @@
   <li><b>ID: </b>{{i.id}} <b>Course Number:</b> {{i.course_number}} <b>Course Title:</b> {{i.course_title}} <a href= {{url_for('register_student', course_id=i.id) }}> GO HERE </a> </li>
   {% endfor %}
 </body>
+{% endblock %}
 </html>
